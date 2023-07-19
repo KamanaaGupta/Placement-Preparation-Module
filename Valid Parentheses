@@ -5,7 +5,7 @@ class Solution:
             if i=='(' or i=='{' or i=='[':
                 stack.append(i)
             else:
-                if not stack:
+                if stack==[]:
                     return False
                 if i==')' and stack[-1]=='(':
                     stack.pop()
@@ -15,4 +15,4 @@ class Solution:
                     stack.pop()
                 else:
                     return False
-        return not stack
+        return stack==[]
