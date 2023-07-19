@@ -1,0 +1,38 @@
+class Solution:
+    def romanToInt(self, s: str) -> int:
+        count=0
+        if 'IV' in s:
+            count=count+4
+            s=s.replace('IV',"")
+        if 'IX' in s:
+            count=count+9
+            s=s.replace('IX',"")
+        if 'XL' in s:
+            count=count+40
+            s=s.replace('XL',"")
+        if 'XC' in s:
+            count=count+90
+            s=s.replace('XC',"")
+        if 'CD' in s:
+            count=count+400
+            s=s.replace('CD',"")
+        if 'CM' in s:
+            count=count+900
+            s=s.replace('CM',"")
+        for i in s:
+            if i=='I':
+                count=count+1
+            elif i=='V':
+                count=count+5
+            elif i=='X':
+                count=count+10
+            elif i=='L':
+                count=count+50
+            elif i=='C':
+                count=count+100
+            elif i=='D':
+                count=count+500
+            else:
+                count=count+1000
+        return count    
+        
