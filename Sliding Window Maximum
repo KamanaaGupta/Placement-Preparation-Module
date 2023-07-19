@@ -1,0 +1,14 @@
+class Solution:
+    def maxSlidingWindow(self, nums: List[int], k: int) -> List[int]:
+        x=0
+        y=k
+        maxx=-10000
+        l1=[]
+        for i in range(len(nums)-k+1):
+            for j in range(x,y):
+                maxx=max(maxx,nums[j])
+            l1.append(maxx)
+            maxx=-10000
+            x=x+1
+            y=y+1
+        return l1
