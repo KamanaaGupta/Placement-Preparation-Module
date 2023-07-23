@@ -1,0 +1,15 @@
+class Solution:
+    def setZeroes(self, matrix: List[List[int]]) -> None:
+        lisi=[]
+        lisj=[]
+        for i in range(len(matrix)):
+            for j in range(len(matrix[i])):
+                if matrix[i][j]==0:
+                    lisj.append(j)
+                    lisi.append(i)
+        for x in range(len(lisi)):
+            for k in range(len(matrix[0])):
+                matrix[lisi[x]][k]=0
+        for i in range(len(matrix)):
+            for j in range(len(lisj)):
+                matrix[i][lisj[j]]=0
