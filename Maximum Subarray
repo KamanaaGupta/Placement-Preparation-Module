@@ -1,0 +1,18 @@
+class Solution:
+    def maxSubArray(self, nums):
+        if len(nums)==1:
+            return nums[0]
+        sum=0
+        max=-10000
+        l1=[]
+        for i in range(len(nums)):
+            for j in range(i,len(nums)):
+                l1.append(nums[j])
+                for k in range(len(l1)):
+                    sum=sum+l1[k]
+                    if sum>max:
+                        max=sum
+                sum=0
+            l1=[]
+        return max
+                
