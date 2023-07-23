@@ -1,0 +1,10 @@
+class Solution:
+    def majorityElement(self, nums: List[int]) -> List[int]:
+        x=len(nums)//3
+        l1=[]
+        numsset=set(nums)
+        numsset=list(numsset)
+        for i in range(len(numsset)):
+            if nums.count(numsset[i])>x:
+                l1.append(numsset[i])
+        return l1
