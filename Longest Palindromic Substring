@@ -1,12 +1,9 @@
 class Solution:
     def longestPalindrome(self, s: str) -> str:
-        palin=""
-        for i in range(len(s)):
-            x=""
-            for j in range(i,len(s)):
-                x=x+s[j]
-                y=x[::-1]
-                if y==x and len(y)>len(palin):
-                    palin=x
-        return palin
-                
+        size=len(s)
+        while(size>0):
+            for i in range(len(s)-size+1):
+                x=s[i:i+size]
+                if x==x[::-1]:
+                    return x
+            size-=1
